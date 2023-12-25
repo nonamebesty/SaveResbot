@@ -12,12 +12,12 @@ import os
 with open('config.json', 'r') as f: DATA = json.load(f)
 def getenv(var): return os.environ.get(var) or DATA.get(var, None)
 
-bot_token = os.environ.get("TOKEN", "df") 
-api_hash = os.environ.get("HASH", "bb") 
-api_id = os.environ.get("ID", "gg")
+bot_token = os.environ.get("TOKEN", "") 
+api_hash = os.environ.get("HASH", "") 
+api_id = os.environ.get("ID", "")
 bot = Client("mybot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
-ss = os.environ.get("STRING", "hh")
+ss = os.environ.get("STRING", "")
 if ss is not None:
 	acc = Client("myacc" ,api_id=api_id, api_hash=api_hash, session_string=ss)
 	acc.start()
